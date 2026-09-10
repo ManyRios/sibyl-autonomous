@@ -184,7 +184,7 @@ export async function executeNegotiationStep(
 
   if (!apiKey) {
     console.warn(
-      "[Agent] API_KEY no configurada. Ejecutando motor táctico heurístico (100% funcional)."
+      "API_KEY not configured. Running heuristic tactical engine (100% functional)."
     );
     return heuristicNegotiationFallback(params);
   }
@@ -223,7 +223,7 @@ export async function executeNegotiationStep(
     console.error("[Agent Gemini Error]", err);
     // Fall back to heuristic engine so request never fails
     const fallback = heuristicNegotiationFallback(params);
-    fallback.reasoning = `[Heurístico de Emergencia] ${fallback.reasoning}`;
+    fallback.reasoning = `[Heuristic Emergency] ${fallback.reasoning}`;
     return fallback;
   }
 }

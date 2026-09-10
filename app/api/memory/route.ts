@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
     });
   } catch (error: any) {
     return NextResponse.json(
-      { error: "Error consultando Sibyl Memory", details: error.message },
+      { error: "Error consulting Sibyl Memory", details: error.message },
       { status: 500 }
     );
   }
@@ -48,52 +48,52 @@ export async function POST(req: NextRequest) {
       let seedPayload: any = {
         name: counterpartyId,
         insights: [
-          "Suele comenzar ofertando 35% por debajo del precio objetivo para desestabilizar.",
-          "Cede entre un 8% y 12% en cada contraoferta si el agente no baja del piso.",
-          "Históricamente aceptó tratos en torno a $13,200 en contratos anteriores.",
+          "They usually start by offering 35% below the target price to unsettle the other party.",
+          "They concede between 8% and 12% in each counteroffer if the agent does not come down from their floor price.",
+          "Historically, they have accepted deals around $13,200 in previous contracts."
         ],
-        concession_pattern: "MODERADA_RESISTENTE",
+        concession_pattern: "MODERATE_RESISTANT",
         estimated_reservation_price: 13500,
         trust_score: 72,
         deal_closed: false,
         action: "INITIAL_SEED",
         offer: 10500,
-        agent_response: "Perfil precargado en Sibyl Memory.",
+        agent_response: "Profile preloaded in Sibyl Memory.",
         timestamp: new Date().toISOString(),
       };
 
       if (seedType === "lowballer") {
         seedPayload = {
-          name: "Titan Procurement (Lowballer Agresivo)",
+          name: "Titan Procurement (Aggressive Lowballer)",
           insights: [
-            "TÁCTICA RECURRENTE: Inicia con ofertas ridículamente bajas (<$9,000) buscando quebrar la resistencia psicológica.",
-            "Si el agente se mantiene firme en la primera ronda, aumenta su oferta un 25% de golpe.",
-            "Precio de reserva oculto detectado en sesión anterior: $12,800.",
+            "RECURRING TACTIC: Starts with ridiculously low offers (<$9,000) aiming to break psychological resistance.",
+            "If the agent holds firm during the first round, they suddenly raise their offer by 25%.",
+            "Hidden reserve price detected in a previous session: $12,800."
           ],
-          concession_pattern: "AGRESIVA_EXTREMA",
+          concession_pattern: "EXTREMELY_AGGRESSIVE",
           estimated_reservation_price: 12800,
           trust_score: 45,
           deal_closed: false,
           action: "INITIAL_SEED",
           offer: 8500,
-          agent_response: "Perfil sembrado de comprador agresivo.",
+          agent_response: "Aggressive buyer profile.",
           timestamp: new Date().toISOString(),
         };
       } else if (seedType === "partner") {
         seedPayload = {
-          name: "Apex Global Tech (Socio Estratégico)",
+          name: "Apex Global Tech (Strategic Partner)",
           insights: [
-            "Negociador colaborativo: respeta márgenes justos de beneficio mutuo.",
-            "Dispuesto a cerrar trato si el descuento final alcanza el 5-8% sobre target.",
-            "Cumplimiento de pago impecable; relación comercial de alto valor a largo plazo.",
+            "Collaborative negotiator: respects fair margins for mutual benefit.",
+            "Willing to close the deal if the final discount falls within 5–8% of the target.",
+            "Clean payment record; high-value, long-term business relationship.",
           ],
-          concession_pattern: "COLABORATIVA_ALTA",
+          concession_pattern: "HIGH_COLLABORATION",
           estimated_reservation_price: 14200,
           trust_score: 95,
           deal_closed: true,
           action: "INITIAL_SEED",
           offer: 13800,
-          agent_response: "Perfil sembrado de socio cooperativo.",
+          agent_response: "Profile of a prospective cooperative partner.",
           timestamp: new Date().toISOString(),
         };
       }
@@ -102,10 +102,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ status: "success", seeded: true, entity: res.entity });
     }
 
-    return NextResponse.json({ error: "Acción no reconocida." }, { status: 400 });
+    return NextResponse.json({ error: "Unrecognized action" }, { status: 400 });
   } catch (error: any) {
     return NextResponse.json(
-      { error: "Error modificando memoria de Sibyl", details: error.message },
+      { error: "Error modifying Sibyl memory", details: error.message },
       { status: 500 }
     );
   }

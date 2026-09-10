@@ -147,21 +147,21 @@ export function formatMemoryContextForPrompt(memory: SibylRecallResult): string 
     ? `$${entity.estimated_reservation_price}`
     : "Desconocido (aún no revelado)";
 
-  const pattern = entity.concession_pattern || "No clasificado";
+  const pattern = entity.concession_pattern || "No qualified";
   const trust = entity.trust_score ?? 50;
   const dealsClosed = entity.total_deals_closed ?? 0;
 
-  let journalSummary = "  - Sin eventos recientes en el diario de Sibyl.";
+  let journalSummary = "  - No recent events in Sibyl's diary.";
   if (recent_events && recent_events.length > 0) {
     journalSummary = recent_events
       .map((ev, i) => {
         const act = ev.acted || {};
-        return `  ${i + 1}. [${act.action || "EVENTO"}] Oferta: $${act.offer ?? "N/A"}, Resp: ${act.agent_response ?? "N/A"}`;
+        return `  ${i + 1}. [${act.action || "EVENT"}] Offer: $${act.offer ?? "N/A"}, Resp: ${act.agent_response ?? "N/A"}`;
       })
       .join("\n");
   }
 
-  return `[SIBYL MEMORY ENGINE: RECUERDO AUTORITATIVO (LOAD-BEARING)]
+  return `[SIBYL MEMORY ENGINE: AUTHORITATIVE REMEMBERING (LOAD-BEARING)]
 - Nombre Contraparte: ${entity.name || memory.counterparty_id}
 - Tasa / Patrón de Concesión Histórico: ${pattern}
 - Precio de Reserva Estimado (Punto de quiebre de la contraparte): ${reservation}

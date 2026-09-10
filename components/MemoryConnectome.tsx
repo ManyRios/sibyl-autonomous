@@ -3,13 +3,10 @@
 import React from "react";
 import {
   FiDatabase,
-  FiActivity,
   FiBookOpen,
   FiLayers,
   FiShield,
   FiCheckCircle,
-  FiAlertCircle,
-  FiTrendingUp,
   FiZap,
 } from "react-icons/fi";
 import { CounterpartyEntity } from "@/lib/sibyl";
