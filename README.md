@@ -68,14 +68,14 @@ The `/api/memory` endpoint handles seeding, resetting, and inspecting stored pro
 
 | Layer | Technology |
 |---|---|
-| Framework | Next.js 16.3.4 (App Router, webpack) |
-| Language | TypeScript |
-| Styles | Tailwind CSS v4 |
+| Framework | Next.js 16.3.4 (App Router) |
+| Language | TypeScript, Python |
+| Styles | Tailwind |
 | Icons | react-icons v5 |
 | LLM | Google Gemini via `@google/genai` v2.21 |
 | Memory | Sibyl Memory Engine (`sibyl-memory-mcp`, `sibyl-memory-client`) |
 | Memory Transport | Child process invoking `scripts/sibyl_bridge.py` via Sibyl virtualenv |
-| Runtime | Node.js v22 / Bun 1.3 on WSL2 Debian |
+| Runtime | Node.js v22 / Bun 1.3 |
 
 ## License
 
