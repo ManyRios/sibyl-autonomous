@@ -90,7 +90,7 @@ export const TacticalPanel: React.FC<TacticalPanelProps> = ({
           value={settings.item}
           onChange={(e) => onChangeSettings({ ...settings, item: e.target.value })}
           className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-sm text-zinc-100 focus:border-orange-500 focus:outline-none transition"
-          placeholder="Ej: Lote 500 GPUs H100"
+          placeholder="Ej: Batch 500 GPUs H100"
         />
       </div>
 

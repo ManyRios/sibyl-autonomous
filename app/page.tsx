@@ -15,7 +15,7 @@ export default function Home() {
 
   // Tactical Parameters
   const [settings, setSettings] = useState<TacticalSettings>({
-    item: "Lote de Servidores GPU H100 (500 Unidades)",
+    item: "Lot of H100 GPU Servers (500 Units)",
     targetPrice: 15000,
     floorPrice: 11000,
     strategy: "balanced",
@@ -129,7 +129,7 @@ export default function Home() {
         }
       }
     } catch (err) {
-      console.error("Error en negociación:", err);
+      console.error("Negotiation error:", err);
     } finally {
       setLoading(false);
     }
